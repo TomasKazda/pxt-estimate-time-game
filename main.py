@@ -2,8 +2,6 @@ intervalSecret = 1000
 intervalPlayers = 0
 INTERVAL_STEP = 250
 
-music.set_volume(16)
-
 on_button_pressed_b()
 
 def on_logo_touch():
@@ -30,7 +28,7 @@ def on_logo_release():
     if percentil >= 95: soundExpression.happy.play_until_done()
     else: music.play_tone(Note.C, 100)
 
-    led.plot_bar_graph(percentil - Math.abs(100 - percentil) * 2, 100)
+    led.plot_bar_graph(Math.max(0, percentil - Math.abs(100 - percentil) * 2), 100)
     pass
     
 def on_button_pressed_a():

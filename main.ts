@@ -1,7 +1,6 @@
 let intervalSecret = 1000
 let intervalPlayers = 0
 let INTERVAL_STEP = 250
-music.setVolume(16)
 on_button_pressed_b()
 function on_button_pressed_a() {
     
@@ -35,7 +34,7 @@ input.onLogoEvent(TouchButtonEvent.Released, function on_logo_release() {
         music.playTone(Note.C, 100)
     }
     
-    led.plotBarGraph(percentil - Math.abs(100 - percentil) * 2, 100)
+    led.plotBarGraph(Math.max(0, percentil - Math.abs(100 - percentil) * 2), 100)
     
 })
 input.onLogoEvent(TouchButtonEvent.Touched, function on_logo_touch() {
