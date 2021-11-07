@@ -35,7 +35,7 @@ input.onLogoEvent(TouchButtonEvent.Released, function on_logo_release() {
         music.playTone(Note.C, 100)
     }
     
-    led.plotBarGraph(percentil - (100 - percentil) * 2, 100)
+    led.plotBarGraph(percentil - Math.abs(100 - percentil) * 2, 100)
     
 })
 input.onLogoEvent(TouchButtonEvent.Touched, function on_logo_touch() {
